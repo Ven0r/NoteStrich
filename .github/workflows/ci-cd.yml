@@ -32,4 +32,4 @@ jobs:
           script: |
             docker pull ven0r/notestrich
             docker rm -f notestrich || true
-            docker run -d --name notestrich -p 3000:3000 ven0r/notestrich
+            docker run -d --name notestrich -p 3000:3000 venor/notestrich
