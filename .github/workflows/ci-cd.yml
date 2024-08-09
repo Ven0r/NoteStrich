@@ -30,6 +30,6 @@ jobs:
           key: ${{ secrets.SERVER_SSH_KEY }}
           port: ${{ secrets.SERVER_SSH_PORT }}
           script: |
-            docker pull ven0r/notestrich
+            docker pull venor/notestrich
             docker rm -f notestrich || true
             docker run -d --name notestrich -p 3000:3000 venor/notestrich
