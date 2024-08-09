@@ -1,0 +1,2 @@
+# notestrich
+nostr client
