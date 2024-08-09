@@ -16,7 +16,7 @@ jobs:
         run: |
           docker build -t ven0r/notestrich .
           docker login -u ${{ secrets.DOCKER_USERNAME }} -p ${{ secrets.DOCKER_PASSWORD }}
-          docker push ven0r/notestrich
+          docker push venor/notestrich
 
   deploy:
     needs: build-and-push
