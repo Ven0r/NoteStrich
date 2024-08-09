@@ -15,3 +15,8 @@ EXPOSE 3000
 
 # Run the application
 CMD ["npm", "start"]
+
+FROM nginx:1.27.0
+COPY --from=build /app/public /usr/share/nginx/html
+RUN rm /etc/nginx/conf.d/default.conf
+COPY nginx.conf /etc/nginx/conf.d/
