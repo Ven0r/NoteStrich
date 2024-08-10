@@ -16,8 +16,8 @@ RUN npm run build
 # Use an official NGINX image to serve the built application
 FROM nginx:1.27.0
 
-# Copy the static build output from the previous stage to NGINX's document root
-COPY --from=build /app/build /usr/share/nginx/html
+# Copy the client-side build output to NGINX's document root
+COPY --from=build /app/.svelte-kit/output/client /usr/share/nginx/html
 
 # Remove the default NGINX configuration file
 RUN rm /etc/nginx/conf.d/default.conf
