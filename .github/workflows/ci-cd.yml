@@ -14,7 +14,7 @@ jobs:
 
       - name: Build and push Docker image
         run: |
-          docker build -t venor/notestrich-image .
+          docker build --no-cache -t venor/notestrich-image .
           docker login -u ${{ secrets.DOCKER_USERNAME }} -p ${{ secrets.DOCKER_PASSWORD }}
           docker push venor/notestrich-image
 
@@ -32,4 +32,4 @@ jobs:
           script: |
             docker pull venor/notestrich
             docker rm -f notestrich || true
-            docker run -d --name notestrich -p 3000:3000 venor/notestrich-image
+            docker run -d --name notestrich -p 80:80 venor/notestrich-image
