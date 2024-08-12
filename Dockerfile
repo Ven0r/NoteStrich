@@ -13,15 +13,22 @@ RUN npm install
 # Build the Svelte app
 RUN npm run build
 
-# Use an official NGINX image to serve the built application
+# Use NGINX to serve the static files
 FROM nginx:1.27.0
 
 # Copy the client-side build output to NGINX's document root
-COPY --from=build /app/.svelte-kit/output/client /usr/share/nginx/html
+COPY --from=build /app/build /usr/share/nginx/html
+
+# Ensure necessary directories exist and set proper permissions
+RUN mkdir -p /var/cache/nginx /var/run/nginx \
+    && chown -R nginx:nginx /usr/share/nginx/html /var/cache/nginx /var/run/nginx
 
 # Remove the default NGINX configuration file
 RUN rm /etc/nginx/conf.d/default.conf
 
-# Copy your custom NGINX configuration file (if you have one)
-COPY nginx.conf /etc/nginx/conf.d/
+# Copy your custom NGINX configuration file
+COPY nginx.conf /etc/nginx/nginx.conf
+
+# Start NGINX
+CMD ["nginx", "-g", "daemon off;"]
 
