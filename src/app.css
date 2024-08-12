@@ -1,0 +1,20 @@
+/* src/app.css */
+@import "@fontsource/inter"; /* Import the Inter font */
+
+/* Tailwind CSS directives */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Apply Inter font globally */
+body {
+  @apply font-sans;
+}
+
+@font-face {
+  font-family: 'Ostrich Sans';
+  src: url('/src/fonts/OstrichSans-Bold.otf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+

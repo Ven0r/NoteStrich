@@ -1,2 +1,6 @@
-<h1>Welcome to SvelteKit</h1>
-<p>Visit <a href="https://kit.svelte.dev">kit.svelte.dev</a> to read the documentation</p>
+<div class="min-h-screen flex items-center justify-center bg-slate-800 text-white">
+  <div class="text-center">
+    <h1 class="text-9xl text-purple-600" style="font-family: 'Ostrich Sans', sans-serif;">Notestrich</h1>
+    <p class="text-xl">Coming Soon</p>
+  </div>
+</div>
