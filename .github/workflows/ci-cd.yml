@@ -34,6 +34,7 @@ jobs:
             docker rm -f notestrich || true
             docker run -d \
             --name notestrich \
+            --restart always \
             -p 80:80 \
             -p 443:443 \
             -v /etc/certs:/etc/certs:ro \
