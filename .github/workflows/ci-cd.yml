@@ -32,4 +32,9 @@ jobs:
           script: |
             docker pull venor/notestrich-image:latest
             docker rm -f notestrich || true
-            docker run -d --name notestrich -p 80:80 -p 443:443 venor/notestrich-image
+            docker run -d \
+            --name notestrich \
+            -p 80:80 \
+            -p 443:443 \
+            -v /etc/certs:/etc/certs:ro \
+            venor/notestrich-image
