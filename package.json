@@ -39,6 +39,7 @@
 	},
 	"type": "module",
 	"dependencies": {
-		"@fontsource/inter": "^5.0.20"
+		"@fontsource/inter": "^5.0.20",
+		"nostr-tools": "^2.7.2"
 	}
 }
